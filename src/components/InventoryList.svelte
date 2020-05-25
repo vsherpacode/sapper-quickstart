@@ -1,11 +1,10 @@
 <script>
-  import { goto } from '@sapper/app';
   export let cars;
 </script>
 
 
 {#each cars as car}
-  <div class="car-card" on:click={() => goto(`/cars/${car.id}`)}>
+  <a class="car-card" href={`/cars/${car.id}`}>
     <div class="details">
       <img src={`/cars/${ car.year + car.model }.jpg`}
            class="thumbnail"
@@ -21,7 +20,7 @@
     <div class="middle">
       <div class="text">Buy now!</div>
     </div>  
-  </div>
+  </a>
 {/each}
 
 
